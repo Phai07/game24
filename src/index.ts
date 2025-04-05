@@ -1,9 +1,9 @@
 import { serve } from "@hono/node-server";
 import { Hono } from "hono";
-import userRouter from "./routes/userRoute.js";
-import gameRouter from "./routes/gameRoute.js";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
+import userRouter from "./routes/userRoute.js";
+import gameRouter from "./routes/gameRoute.js";
 import "dotenv/config";
 
 const app = new Hono();
