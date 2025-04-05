@@ -4,6 +4,7 @@ import userRouter from "./routes/userRoute.js";
 import gameRouter from "./routes/gameRoute.js";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
+import "dotenv/config";
 
 const app = new Hono();
 
@@ -27,10 +28,11 @@ app.get("/", (c) => {
   return c.text("Hello world!");
 });
 
+const port = process.env.PORT ? Number(process.env.PORT) : 3000;
 serve(
   {
     fetch: app.fetch,
-    port: 3000,
+    port,
   },
   (info) => {
     console.log(`Server is running on http://localhost:${info.port}`);
