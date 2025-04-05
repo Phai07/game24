@@ -24,7 +24,7 @@ app.route("/api/users", userRouter);
 app.route("/api/game", gameRouter);
 
 app.get("/", (c) => {
-  return c.text("Hello Hono!");
+  return c.text("Hello world!");
 });
 
 serve(
