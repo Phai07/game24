@@ -2,7 +2,6 @@ import prisma from "../config/db.js";
 import type { Context } from "hono";
 
 type Operation = "+" | "-" | "*" | "/";
-type Expression = { expr: string; value: number };
 
 export async function solveGame24(c: Context) {
   const { numbers } = await c.req.json();
