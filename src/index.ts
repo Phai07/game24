@@ -23,7 +23,6 @@ app.use(
 app.route("/api/users", userRouter);
 app.route("/api/game", gameRouter);
 
-//  check route
 app.get("/", (c) => {
   return c.text("Hello Hono!");
 });
