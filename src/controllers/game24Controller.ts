@@ -17,7 +17,6 @@ export async function solveGame24(c: Context) {
     );
   }
 
-  // Check if cached
   const cached = await prisma.answer.findFirst({
     where: { numbers: { equals: numbers } },
   });
@@ -26,7 +25,6 @@ export async function solveGame24(c: Context) {
     return c.json({ cached: true, solutions: cached.solutions });
   }
 
-  // Solve
   const solutions = solve24(numbers);
 
   const created = await prisma.answer.create({
